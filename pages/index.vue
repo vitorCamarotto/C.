@@ -4,10 +4,10 @@
       v-slot="{ item }"
       :items="homeImages"
       :ui="{ item: 'basis-full' }"
-      class="rounded-lg overflow-hidden w-2/3"
+      class="rounded-lg overflow-hidden flex w-10/12"
       indicators
     >
-      <NuxtImg :src="item" class="w-full" draggable="true" />
+      <NuxtImg :src="item" class="mx-auto" draggable="true" />
     </UCarousel>
 
   </div>
@@ -17,6 +17,7 @@
 const homeImages = [
   '/surf-cedotte-1.jpg',
   '/pranchas-stock-cedotte.jpg',
+  '/aereo-1.jpg',
   '/shaper-paulo-cedotte.jpg',
 ]
 
