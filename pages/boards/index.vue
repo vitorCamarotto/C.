@@ -8,19 +8,19 @@
 
     <section class="flex flex-col items-center">
       <div
-        @click="navigateToBoard"
-        class="w-2/3 flex flex-col items-center justify-center border-white rounded-lg border-2"
+        v-for="surfboard in surfboardsArray"
+        :key="surfboard.name"
+        @click="navigateToBoard(surfboard.path)"
+        class="w-2/3 flex flex-col items-center justify-center border-white rounded-lg border-2 my-4"
       >
         <h1 class="flex flex-col items-center text-2xl">
-          Bullet
+          {{ surfboard.name }}
         </h1>
 
-        <NuxtImg
-          src="/boards/bullet.jpeg"
-        ></NuxtImg>
+        <NuxtImg :src="surfboard.src"/>
 
         <p class="flex flex-col items-center text-lg">
-          R$ 2.000,00
+          R$ {{ surfboard.price }}
         </p>
       </div>
     </section>
@@ -28,7 +28,10 @@
 </template>
 
 <script setup lang="ts">
-const navigateToBoard = async () => {
-  await navigateTo('/boards/bullet')
+import { surfboardsArray } from '@/utils/surfboards'
+
+const navigateToBoard = async (path: string) => {
+  await navigateTo(`/boards/${path}`)
 }
+
 </script>
