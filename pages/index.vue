@@ -55,8 +55,6 @@
         class="w-full"
       />
     </section>
-
-
   </div>
 </template>
 
