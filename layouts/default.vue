@@ -1,10 +1,11 @@
 <template>
-  <div class="bg-emerald-400 w-full flex justify-between items-center h-20 my-auto">
+  <div class="bg-emerald-400 w-full flex justify-between items-center h-20 my-auto fixed z-10">
     <NuxtLink
       to="/"
     >
       <NuxtImg
         class="ms-4 mt-2"
+        sizes="120px"
         src="/logo-cedotte.png"
       />
     </NuxtLink>

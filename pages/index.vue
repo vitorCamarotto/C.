@@ -1,15 +1,12 @@
 <template>
   <div class="flex flex-col items-center justify-center">
     <section class="flex flex-col items-center my-8">
-      <h1 class="text-lg font-bold my-2">
-        TECNOLOGIA.
+      <h1 class="text-xl font-bold my-2">
+        TECNOLOGIA AUSTRALIANA,
       </h1>
 
-      <h1 class="text-lg font-bold my-2">
-        DESIGN.
-      </h1>
-      <h1 class="text-lg font-bold my-2">
-        PERFORMANCE.
+      <h1 class="text-xl font-bold my-2">
+        PERFORMANCE BRASILEIRA
       </h1>
     </section>
 
@@ -20,7 +17,7 @@
         v-slot="{ item }"
         :items="homeImagesCarousel"
         :ui="{ item: 'basis-full' }"
-        class="rounded-lg overflow-hidden"
+        class="rounded-lg overflow-hidden lg:h-screen"
         indicators
       >
         <NuxtImg :src="item" class="w-full" draggable="false" />
@@ -69,6 +66,8 @@ const homeImages = [
 ]
 
 const homeImagesCarousel = [
+  'home/aereo-2.jpeg',
+  'home/tubo.jpeg',
   'home/aereo.jpg',
   'home/cutback.jpg',
   'home/rasgada.jpeg',
@@ -89,6 +88,6 @@ onMounted(() => {
     }
 
     carouselRef.value.next()
-  }, 2000)
+  }, 2800)
 })
 </script>
