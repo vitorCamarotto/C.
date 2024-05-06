@@ -14,14 +14,17 @@
     </section>
 
     <section class="flex flex-col items-center">
-      <NuxtImg
-        :src="homeImages[2].src"
-        class="w-full"
-      />
-      <NuxtImg
-        :src="homeImages[0].src"
-        class="w-full"
-      />
+
+      <UCarousel
+        ref="carouselRef"
+        v-slot="{ item }"
+        :items="homeImagesCarousel"
+        :ui="{ item: 'basis-full' }"
+        class="rounded-lg overflow-hidden"
+        indicators
+      >
+        <NuxtImg :src="item" class="w-full" draggable="false" />
+      </UCarousel>
     </section>
 
     <section class="flex flex-col items-center">
@@ -32,7 +35,7 @@
       <UButton
         color="primary"
         variant="solid"
-        class="mb-24 mt-4"
+        class="mb-24 mt-4 text-lg"
         @click="navigateToBoardsPage"
       >
         Ver catálogo
@@ -59,13 +62,33 @@
 
 <script setup lang="ts">
 const homeImages = [
-  { src: '/surf-cedotte-1.jpg' },
-  { src: '/pranchas-stock-cedotte.jpg' },
-  { src: '/aereo-1.jpg' },
-  { src: '/shaper.jpeg' },
+  { src: 'home/cutback.jpg' },
+  { src: 'home/pranchas-stock-cedotte.jpg' },
+  { src: 'home/aereo.jpg' },
+  { src: 'home/shaper.jpeg' },
+]
+
+const homeImagesCarousel = [
+  'home/aereo.jpg',
+  'home/cutback.jpg',
+  'home/rasgada.jpeg',
 ]
 
 const navigateToBoardsPage = async () => {
   await navigateTo('/boards')
 }
+
+const carouselRef = ref()
+
+onMounted(() => {
+  setInterval(() => {
+    if (!carouselRef.value) return
+
+    if (carouselRef.value.page === carouselRef.value.pages) {
+      return carouselRef.value.select(0)
+    }
+
+    carouselRef.value.next()
+  }, 2000)
+})
 </script>

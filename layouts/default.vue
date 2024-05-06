@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-green-300 w-full flex justify-between items-center h-20 my-auto">
+  <div class="bg-emerald-400 w-full flex justify-between items-center h-20 my-auto">
     <NuxtLink
       to="/"
     >
