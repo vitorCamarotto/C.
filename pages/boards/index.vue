@@ -11,7 +11,7 @@
         v-for="surfboard in surfboardsArray"
         :key="surfboard.name"
         @click="navigateToBoard(surfboard.path)"
-        class="w-2/3 flex flex-col items-center justify-center border-white rounded-lg border-2 my-4 border-emerald-200"
+        class="w-2/3 flex flex-col items-center justify-center rounded-lg border-2 my-4 border-emerald-200"
       >
         <h1 class="flex flex-col items-center text-2xl">
           {{ surfboard.name }}

@@ -1,13 +1,25 @@
 <template>
   <div class="flex flex-col items-center justify-center">
-    <section class="flex flex-col items-center my-8">
-      <h1 class="text-xl font-bold my-2">
-        TECNOLOGIA AUSTRALIANA,
-      </h1>
+    <section class="flex flex-col items-center justify-center h-[200px]">
+      <div class="flex items-center justify-center">
+        <h1 class="text-xl font-bold my-2 tracking-[0.3rem]">
+          TECNOLOGIA
+        </h1>
 
-      <h1 class="text-xl font-bold my-2">
-        PERFORMANCE BRASILEIRA
-      </h1>
+        <h1 class="ms-4 text-lg my-2 tracking-widest">
+          AUSTRALIANA,
+        </h1>
+      </div>
+
+      <div class="flex justify-center">
+        <h1 class="text-xl font-bold my-2 tracking-[0.3rem]">
+          PERFORMANCE
+        </h1>
+
+        <h1 class="ms-4 text-lg my-2 tracking-widest">
+          BRASILEIRA.
+        </h1>
+      </div>
     </section>
 
     <section class="flex flex-col items-center">
@@ -25,8 +37,8 @@
     </section>
 
     <section class="flex flex-col items-center">
-      <h1 class="text-lg font-bold mt-24">
-        SUA PRÓXIMA PRANCHA ESTÁ AQUI
+      <h1 class="text-lg mt-24 tracking-widest">
+        SUA PRÓXIMA PRANCHA ESTÁ AQUI:
       </h1>
 
       <UButton
@@ -45,7 +57,7 @@
     </section>
 
     <section class="flex flex-col items-center">
-      <h1 class="text-lg font-bold mt-24">
+      <h1 class="text-lg mt-24 tracking-widest mb-12">
         CONHEÇA O SHAPER
       </h1>
 

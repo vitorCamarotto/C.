@@ -51,8 +51,9 @@
       </USlideover>
     </div>
   <slot />
+  <UDivider class="mt-10"/>
 
-  <div class="flex justify-center mt-24">
+  <div class="flex justify-center mt-24 mb-4">
     <p>{{ footerRightsText }}</p>
   </div>
 </template>
