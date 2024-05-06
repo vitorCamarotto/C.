@@ -3,4 +3,5 @@ export interface Surfboard {
   price: string;
   src: string;
   availableSizes: string[];
+  description: string;
 }

@@ -14,7 +14,6 @@
     </section>
 
     <section class="flex flex-col items-center">
-
       <NuxtImg
         :src="homeImages[2].src"
         class="w-full"
