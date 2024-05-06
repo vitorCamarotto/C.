@@ -51,6 +51,7 @@
       <NuxtImg
         :src="homeImages[1].src"
         class="w-full"
+        alt="pranchas-cedotte"
       />
     </section>
 
@@ -70,6 +71,7 @@
       <NuxtImg
         :src="homeImages[3].src"
         class="w-full"
+        alt="shaper"
       />
     </section>
   </div>
