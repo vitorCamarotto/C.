@@ -1,29 +1,28 @@
 <template>
   <div class="flex flex-col items-center justify-center">
     <section class="flex flex-col items-center justify-center h-[200px]">
-      <div class="flex items-center justify-center">
-        <h1 class="text-xl font-bold my-2 tracking-[0.3rem]">
+      <div class="flex items-center justify-center px-2">
+        <h1 class="text-xl font-bold tracking-[0.4rem]">
           TECNOLOGIA
         </h1>
 
-        <h1 class="ms-4 text-lg my-2 tracking-widest">
+        <h1 class="self-end ms-2 text-sm tracking-widest">
           AUSTRALIANA,
         </h1>
       </div>
 
-      <div class="flex justify-center">
-        <h1 class="text-xl font-bold my-2 tracking-[0.3rem]">
+      <div class="flex justify-center mt-4">
+        <h1 class="text-xl font-bold tracking-[0.4rem]">
           PERFORMANCE
         </h1>
 
-        <h1 class="ms-4 text-lg my-2 tracking-widest">
+        <h1 class="self-end ms-2 text-sm tracking-widest">
           BRASILEIRA.
         </h1>
       </div>
     </section>
 
     <section class="flex flex-col items-center">
-
       <UCarousel
         ref="carouselRef"
         v-slot="{ item }"
@@ -32,23 +31,22 @@
         class="rounded-lg overflow-hidden lg:h-screen"
         indicators
       >
-        <NuxtImg :src="item" class="w-full" draggable="false" />
+        <NuxtImg :src="item" class="w-full" draggable="false" alt="imagem-surf"/>
       </UCarousel>
     </section>
 
-    <section class="flex flex-col items-center">
-      <h1 class="text-lg mt-24 tracking-widest">
-        SUA PRÓXIMA PRANCHA ESTÁ AQUI:
-      </h1>
-
+    <section class="flex flex-col items-center justify-center relative">
       <UButton
-        color="primary"
-        variant="solid"
-        class="mb-24 mt-4 text-lg"
+        variant="soft"
+        class="text-3xl absolute top-[80%] right-12 tracking-wider"
         @click="navigateToBoardsPage"
       >
-        Ver catálogo
+        Ver catálogo >
       </UButton>
+
+      <h1 class="flex items-center text-lg tracking-widest h-[240px]">
+        SUA PRÓXIMA PRANCHA ESTÁ AQUI
+      </h1>
 
       <NuxtImg
         :src="homeImages[1].src"
@@ -56,8 +54,16 @@
       />
     </section>
 
-    <section class="flex flex-col items-center">
-      <h1 class="text-lg mt-24 tracking-widest mb-12">
+    <section class="flex flex-col items-center relative">
+      <UButton
+        variant="soft"
+        class="text-3xl absolute top-[80%] right-12 tracking-wider"
+        @click="navigateToBoardsPage"
+      >
+        A história >
+      </UButton>
+
+      <h1 class="flex items-center text-lg tracking-widest h-[240px]">
         CONHEÇA O SHAPER
       </h1>
 

@@ -17,7 +17,7 @@
           {{ surfboard.name }}
         </h1>
 
-        <NuxtImg :src="surfboard.src"/>
+        <NuxtImg :src="surfboard.src" :alt="`imagem-prancha-${surfboard.path}`"/>
 
         <p class="flex flex-col items-center text-lg">
           R$ {{ surfboard.price }}

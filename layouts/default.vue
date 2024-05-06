@@ -61,7 +61,6 @@
 <script setup lang="ts">
 const isNavBarOpen = ref<boolean>(false)
 
-
-const footerRightsText: string = 'Cedotte 2024 © All rights reserved.'
+const footerRightsText: string = 'Cedotte 2024 © Todos os direitos reservados.'
 
 </script>
