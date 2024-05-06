@@ -34,9 +34,9 @@
         color="primary"
         variant="solid"
         class="mb-24 mt-4"
+        @click="navigateToBoardsPage"
       >
         Ver catálogo
-
       </UButton>
 
       <NuxtImg
@@ -66,4 +66,7 @@ const homeImages = [
   { src: '/shaper.jpeg' },
 ]
 
+const navigateToBoardsPage = async () => {
+  await navigateTo('/boards')
+}
 </script>

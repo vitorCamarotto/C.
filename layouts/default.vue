@@ -1,6 +1,5 @@
 <template>
   <div class="bg-green-300 w-full flex justify-between items-center h-20 my-auto">
-
     <NuxtLink
       to="/"
     >
@@ -15,10 +14,41 @@
         size="30"
         class="me-4 text-black cursor-pointer"
         name="fluent:navigation-24-regular"
+        @click="isNavBarOpen = !isNavBarOpen"
         dynamic
       />
     </div>
   </div>
+
+  <div>
+      <USlideover class="mt-20" v-model="isNavBarOpen" :overlay="false">
+        <div class="p-4 flex-1">
+          <div class="flex flex-col items-center">
+            <NuxtLink
+              to="/"
+              class="text-2xl font-bold my-4"
+              @click="isNavBarOpen = false"
+            >
+              HOME
+            </NuxtLink>
+            <NuxtLink
+              to="/boards"
+              class="text-2xl font-bold my-4"
+              @click="isNavBarOpen = false"
+            >
+              PRANCHAS
+            </NuxtLink>
+            <NuxtLink
+              to="/shaper"
+              class="text-2xl font-bold my-4"
+              @click="isNavBarOpen = false"
+            >
+              SHAPER
+            </NuxtLink>
+            </div>
+        </div>
+      </USlideover>
+    </div>
   <slot />
 
   <div class="flex justify-center mt-24">
@@ -27,7 +57,7 @@
 </template>
 
 <script setup lang="ts">
-const headerNavBarText: string = 'cedotte'
+const isNavBarOpen = ref<boolean>(false)
 
 
 const footerRightsText: string = 'Cedotte 2024 © All rights reserved.'
