@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center justify-center mx-auto lg:w-1/2">
     <section class="flex flex-col items-center my-8">
       <h1 class="text-lg font-light my-2 tracking-widest">
         Paulo Cedotte
@@ -15,7 +15,8 @@
 
       <NuxtImg
         src="/shaping.webp"
-        class="w-full"
+        alt="shaping-cedotte"
+        class="w-full lg:w-9/12"
       />
 
       <p class="w-9/12 my-4 text-gray-300">

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center">
+  <div class="flex flex-col items-center justify-center md:max-w-[768px] md:mx-auto">
     <section>
       <UButton
         color="primary"
@@ -69,9 +69,7 @@ const loadBoardData = async () => {
   try {
     const module = await import(`@/utils/boards/${boardName}.ts`)
 
-    console.log("Loaded the board data:", module.default)
     boardData.value = module.default
-
   } catch (error) {
     console.error("Failed to load the board data:", error)
   }
