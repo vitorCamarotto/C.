@@ -87,12 +87,12 @@
     </UAccordion>
 
     <UButton
-        color="primary"
-        variant="solid"
-        class="mb-8 mt-4"
-        @click="console.log('Pedido realizado com sucesso! Em breve entraremos em contato.')"
-      >
-        Realizar pedido no WhatsApp
+      color="primary"
+      variant="solid"
+      class="mb-8 mt-4"
+      @click="console.log('Pedido realizado com sucesso! Em breve entraremos em contato.')"
+    >
+      Finalizar pedido no WhatsApp
     </UButton>
 
     <p class="text-sm">

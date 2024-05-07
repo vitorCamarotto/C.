@@ -12,7 +12,7 @@
     </section>
 
     <section class="flex flex-col items-center my-8">
-      <h1 class="text-2xl font-bold my-2">
+      <h1 class="text-4xl my-2 tracking-widest">
         {{ boardData.name }}
       </h1>
 
