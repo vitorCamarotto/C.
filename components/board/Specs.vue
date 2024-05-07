@@ -89,7 +89,8 @@
     <UButton
       color="primary"
       variant="solid"
-      class="mb-8 mt-4"
+      size="xl"
+      class="mb-8 mt-8"
       @click="console.log('Pedido realizado com sucesso! Em breve entraremos em contato.')"
     >
       Finalizar pedido no WhatsApp

@@ -4,22 +4,29 @@
       <UButton
         color="primary"
         variant="soft"
-        class="mb-8 mt-4"
+        class="mb-2 mt-4"
         @click="navigateToBoardsPage"
       >
         Voltar para catálogo
       </UButton>
     </section>
 
-    <section class="flex flex-col items-center my-8">
-      <h1 class="text-4xl my-2 tracking-widest text-gray-200">
-        {{ boardData.name }}
-      </h1>
+    <section class="flex flex-col items-center my-2">
+      <NuxtImg
+        :src="boardData.nameSrc"
+        :alt="boardData.name"
+        class="w-2/3 mb-4 mt-8"
+      />
 
       <NuxtImg
         :src="boardData.src"
+        :alt="boardData.name"
         class="w-2/3"
       />
+
+      <h1 class="text-4xl mt-4 tracking-wider text-gray-200">
+        {{ boardData.name }}
+      </h1>
 
       <p class="text-gray-400 mt-2">
         R$ {{ boardData.price }}
@@ -44,6 +51,7 @@ const fallbackBoard = {
   name: '',
   price: '0',
   src: '',
+  nameSrc: '',
   availableSizes: [],
   description: '',
 }

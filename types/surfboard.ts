@@ -3,6 +3,7 @@ export interface Surfboard {
   path: string;
   price: string;
   src: string;
+  nameSrc: string;
   availableSizes: string[];
   description: string;
 }
