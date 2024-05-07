@@ -1,7 +1,7 @@
 <template>
   <div class="flex flex-col items-center justify-center">
     <section class="flex flex-col items-center my-8">
-      <h1 class="text-3xl font-medium  my-2 tracking-widest">
+      <h1 class="text-lg font-light my-2 tracking-widest">
         PRANCHAS
       </h1>
     </section>

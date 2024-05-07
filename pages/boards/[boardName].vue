@@ -12,7 +12,7 @@
     </section>
 
     <section class="flex flex-col items-center my-8">
-      <h1 class="text-4xl my-2 tracking-widest">
+      <h1 class="text-4xl my-2 tracking-widest text-gray-200">
         {{ boardData.name }}
       </h1>
 
@@ -21,13 +21,13 @@
         class="w-2/3"
       />
 
-      <p class="text-lg">
+      <p class="text-gray-400 mt-2">
         R$ {{ boardData.price }}
       </p>
     </section>
 
     <section class="flex flex-col items-center my-8">
-      <h2 class="w-10/12 text-lg text-center">
+      <h2 class="w-10/12 text-lg text-center text-gray-300">
         {{ boardData.description }}
       </h2>
     </section>

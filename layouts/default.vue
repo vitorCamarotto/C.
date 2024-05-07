@@ -28,7 +28,7 @@
 
   <div class="flex flex-col items-center justify-center mt-8 mb-4 text-center">
     <NuxtImg
-      class="mb-4"
+      class="mb-8"
       sizes="40px"
       src="/gas-mask-white.png"
       alt="gas-mask"
@@ -60,11 +60,9 @@ const addressText: string = 'Rua Guarani, 725 - Ubatuba, Brasil'
 
 const toggleNavDrawer = () => {
   navDrawerVisible.value = !navDrawerVisible.value
-  console.log(navDrawerVisible.value)
 }
 
 const closeNavDrawer = () => {
-  console.log('closing nav drawer')
   navDrawerVisible.value = false
 }
 
