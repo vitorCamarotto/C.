@@ -39,7 +39,7 @@
       <section class="flex flex-col items-center justify-center relative">
         <UButton
           variant="soft"
-          class="text-3xl absolute top-[80%] right-12 tracking-wider xl:top-[91%] xl:right-4"
+          class="text-3xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[91%] xl:right-4"
           @click="navigateToBoardsPage"
         >
           Ver catálogo >
@@ -59,7 +59,7 @@
       <section class="flex flex-col items-center relative">
         <UButton
           variant="soft"
-          class="text-3xl absolute top-[80%] right-12 tracking-wider xl:top-[70%] xl:right-4"
+          class="text-3xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[70%] xl:right-4"
           @click="navigateToShaperPage"
         >
           A história >

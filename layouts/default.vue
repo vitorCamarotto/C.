@@ -9,13 +9,31 @@
       />
     </NuxtLink>
 
-    <UIcon
-      size="30"
-      class="me-4 text-black cursor-pointer"
-      name="fluent:navigation-24-regular"
-      @click="toggleNavDrawer"
-      dynamic
-    />
+    <div class="md:hidden">
+      <UIcon
+        size="30"
+        class="me-4 text-black cursor-pointer block"
+        name="fluent:navigation-24-regular"
+        @click="toggleNavDrawer"
+        dynamic
+      />
+    </div>
+
+    <div class="hidden md:flex">
+      <div class="mx-3" v-for="path in paths" :key="path.to">
+        <NuxtLink
+          :to="path.to"
+          class="
+            text-xl font-semibold my-4 tracking-wide hover:underline
+            underline-offset-0 transition-all duration-300 decoration-transparent hover:decoration-black
+            hover:decoration-2 hover:underline-offset-4
+          "
+          :class="selectedPathClass(path.to)"
+        >
+          {{ path.title}}
+        </NuxtLink>
+        </div>
+    </div>
   </div>
 
   <LayoutNavDrawer
@@ -53,6 +71,8 @@
 </template>
 
 <script setup lang="ts">
+import paths from '@/utils/paths'
+
 const navDrawerVisible = ref<boolean>(false)
 
 const footerRightsText: string = 'Cedotte 2024 © Todos os direitos reservados.'
@@ -76,4 +96,8 @@ const socialLinks: { iconName: string, link: string }[] = [
     link: 'https://www.instagram.com/cedottestore/'
   }
 ]
+
+const selectedPathClass = (path: string) => {
+  return path === useRoute().path ? 'text-black' : ''
+}
 </script>
