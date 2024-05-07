@@ -91,7 +91,7 @@
       variant="solid"
       size="xl"
       class="mb-8 mt-8"
-      @click="console.log('Pedido realizado com sucesso! Em breve entraremos em contato.')"
+      @click="sendToWhatsApp"
     >
       Finalizar pedido no WhatsApp
     </UButton>
@@ -125,4 +125,22 @@ const colorChoice = ref(colorChoices[0])
 
 const userName = ref('')
 const extraInfo = ref('')
+
+const sendToWhatsApp = () => {
+  const message = `Salve! Novo pedido de prancha personalizada!:
+  - Tamanho: ${boardSize.value}
+  - Material: ${material.value}
+  - Sistema de quilhas: ${finSystem.value}
+  - Configuração de quilhas: ${finConfiguration.value}
+  - Rabeta: ${tailType.value}
+  - Pintura: ${colorChoice.value}
+  - Nome no cliente: ${userName.value}
+  - Informações adicionais: ${extraInfo.value}`;
+
+  const encodedMessage = encodeURIComponent(message);
+  const whatsappUrl = `https://wa.me/5512997184721?text=${encodedMessage}`;
+
+  window.open(whatsappUrl, '_blank');
+}
+
 </script>
