@@ -4,7 +4,7 @@
       <NuxtImg
         class="ms-4 mt-2"
         sizes="100px"
-        src="/logo-cedotte.png"
+        src="/logo-cedotte.webp"
         alt="logo-cedotte"
       />
     </NuxtLink>
@@ -30,7 +30,7 @@
     <NuxtImg
       class="mb-8"
       sizes="40px"
-      src="/gas-mask-white.png"
+      src="/gas-mask-white.webp"
       alt="gas-mask"
     />
 

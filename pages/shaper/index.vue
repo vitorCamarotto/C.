@@ -14,7 +14,7 @@
       </p>
 
       <NuxtImg
-        src="/shaping.jpeg"
+        src="/shaping.webp"
         class="w-full"
       />
 

@@ -79,18 +79,18 @@
 
 <script setup lang="ts">
 const homeImages = [
-  { src: 'home/cutback.jpg' },
-  { src: 'home/pranchas-stock-cedotte.jpg' },
-  { src: 'home/aereo.jpg' },
-  { src: 'home/shaper.jpeg' },
+  { src: 'home/cutback.webp' },
+  { src: 'home/pranchas-stock-cedotte.webp' },
+  { src: 'home/aereo.webp' },
+  { src: 'home/shaper.webp' },
 ]
 
 const homeImagesCarousel = [
-  'home/aereo-2.jpeg',
-  'home/tubo.jpeg',
-  'home/aereo.jpg',
-  'home/cutback.jpg',
-  'home/rasgada.jpeg',
+  'home/aereo-2.webp',
+  'home/tubo.webp',
+  'home/aereo.webp',
+  'home/cutback.webp',
+  'home/rasgada.webp',
 ]
 
 const navigateToBoardsPage = async () => {

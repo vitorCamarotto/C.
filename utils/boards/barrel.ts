@@ -4,7 +4,7 @@ const barrel: Surfboard = {
   name: 'Barrel PRO',
   path: 'barrel',
   price: '2500,00',
-  src: '/boards/barrel-pro.png',
+  src: '/boards/barrel-pro.webp',
   nameSrc: '/boards/barrel-pro-name.webp',
   availableSizes: ['6\'0"', '6\'3"', '6\'6"'],
   description: 'Categoricamente feita para ondas cavadas e com bastante pressão. Outline desenvolvido para proporcionar uma boa velocidade com um ótimo drive. Uma combinação de single concave facilita os finishing turns.'
