@@ -9,15 +9,13 @@
       />
     </NuxtLink>
 
-    <div>
-      <UIcon
-        size="30"
-        class="me-4 text-black cursor-pointer"
-        name="fluent:navigation-24-regular"
-        @click="toggleNavDrawer"
-        dynamic
-      />
-    </div>
+    <UIcon
+      size="30"
+      class="me-4 text-black cursor-pointer"
+      name="fluent:navigation-24-regular"
+      @click="toggleNavDrawer"
+      dynamic
+    />
   </div>
 
   <LayoutNavDrawer
@@ -25,10 +23,32 @@
     @drawerClosed="closeNavDrawer"
   />
   <slot />
+
   <UDivider class="mt-10"/>
 
-  <div class="flex justify-center mt-24 mb-4">
-    <p>{{ footerRightsText }}</p>
+  <div class="flex flex-col items-center justify-center mt-8 mb-4">
+    <NuxtImg
+      class="mb-4"
+      sizes="40px"
+      src="/gas-mask-white.png"
+      alt="gas-mask"
+    />
+
+    <div class="flex mt-2">
+      <div v-for="icon in socialLinks" :key="icon.iconName">
+        <a :href="icon.link" target="_blank">
+          <UIcon
+            class="cursor-pointer mx-4"
+            size="50"
+            :name="icon.iconName"
+            dynamic
+          />
+        </a>
+      </div>
+    </div>
+
+    <p class="mt-4">{{ addressText }}</p>
+    <p class="mt-4">{{ footerRightsText }}</p>
   </div>
 </template>
 
@@ -36,6 +56,7 @@
 const navDrawerVisible = ref<boolean>(false)
 
 const footerRightsText: string = 'Cedotte 2024 © Todos os direitos reservados.'
+const addressText: string = 'Rua Guarani, 725 - Ubatuba, Brasil'
 
 const toggleNavDrawer = () => {
   navDrawerVisible.value = !navDrawerVisible.value
@@ -46,4 +67,15 @@ const closeNavDrawer = () => {
   console.log('closing nav drawer')
   navDrawerVisible.value = false
 }
+
+const socialLinks: { iconName: string, link: string }[] = [
+  {
+    iconName: 'mdi:facebook',
+    link: 'https://www.facebook.com/cedottestore?locale=pt_BR'
+  },
+  {
+    iconName: 'mdi:instagram',
+    link: 'https://www.instagram.com/cedottestore/'
+  }
+]
 </script>

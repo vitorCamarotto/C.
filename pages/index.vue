@@ -44,7 +44,7 @@
         Ver catálogo >
       </UButton>
 
-      <h1 class="flex items-center text-lg tracking-widest h-[240px]">
+      <h1 class="flex items-center text-center text-lg tracking-widest h-[240px]">
         SUA PRÓXIMA PRANCHA ESTÁ AQUI
       </h1>
 
