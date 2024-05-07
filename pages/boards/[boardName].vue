@@ -39,7 +39,11 @@
       </h2>
     </section>
 
-    <section class="w-10/12">
+    <section class="w-10/12 flex flex-col items-center">
+      <UBadge variant="outline" class="mb-12" size="lg">
+        Monte sua prancha
+      </UBadge>
+
       <BoardSpecs />
     </section>
   </div>
