@@ -35,11 +35,11 @@
       </UCarousel>
     </section>
 
-    <div class="xl:flex xl:gap-40">
+    <div class="xl:flex xl:gap-20 px-12">
       <section class="flex flex-col items-center justify-center relative">
         <UButton
           variant="soft"
-          class="text-3xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[91%] xl:right-4"
+          class="text-2xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[91%] xl:right-28"
           @click="navigateToBoardsPage"
         >
           Ver catálogo >
@@ -51,7 +51,7 @@
 
         <NuxtImg
           :src="homeImages[1].src"
-          class="w-full"
+          class="w-full xl:w-9/12"
           alt="pranchas-cedotte"
         />
       </section>
@@ -59,7 +59,7 @@
       <section class="flex flex-col items-center relative">
         <UButton
           variant="soft"
-          class="text-3xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[70%] xl:right-4"
+          class="text-2xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[86%] xl:right-4"
           @click="navigateToShaperPage"
         >
           A história >
