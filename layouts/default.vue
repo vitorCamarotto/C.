@@ -26,7 +26,7 @@
 
   <UDivider class="mt-10"/>
 
-  <div class="flex flex-col items-center justify-center mt-8 mb-4">
+  <div class="flex flex-col items-center justify-center mt-8 mb-4 text-center">
     <NuxtImg
       class="mb-4"
       sizes="40px"

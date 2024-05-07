@@ -3,8 +3,8 @@
     <section>
       <UButton
         color="primary"
-        variant="solid"
-        class="mb-24 mt-4"
+        variant="soft"
+        class="mb-8 mt-4"
         @click="navigateToBoardsPage"
       >
         Voltar para catálogo
@@ -30,7 +30,10 @@
       <h2 class="w-10/12 text-lg text-center">
         {{ boardData.description }}
       </h2>
+    </section>
 
+    <section class="w-10/12">
+      <BoardSpecs />
     </section>
   </div>
 </template>
@@ -41,7 +44,8 @@ const fallbackBoard = {
   name: '',
   price: '0',
   src: '',
-  availableSizes: []
+  availableSizes: [],
+  description: '',
 }
 
 const boardData = ref(fallbackBoard)
