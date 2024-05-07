@@ -40,11 +40,16 @@
     </section>
 
     <section class="w-10/12 flex flex-col items-center">
-      <UBadge variant="outline" class="mb-12" size="lg">
+      <UBadge
+        variant="outline"
+        class="mb-12 cursor-pointer shadow-lg hover:shadow-emerald-800 transition-all duration-500"
+        size="lg"
+        @click="scrollToBoardSpecs"
+      >
         Monte sua prancha
       </UBadge>
 
-      <BoardSpecs />
+      <BoardSpecs id="board-specs"/>
     </section>
   </div>
 </template>
@@ -77,6 +82,12 @@ const loadBoardData = async () => {
 
 const navigateToBoardsPage = async () => {
   await navigateTo('/boards')
+}
+
+const scrollToBoardSpecs = () => {
+  const boardSpecs = document.getElementById('board-specs')
+
+  boardSpecs?.scrollIntoView({ behavior: 'smooth', block: "end", inline: "nearest" })
 }
 
 onMounted(loadBoardData)
