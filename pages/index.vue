@@ -59,7 +59,7 @@
       <UButton
         variant="soft"
         class="text-3xl absolute top-[80%] right-12 tracking-wider"
-        @click="navigateToBoardsPage"
+        @click="navigateToShaperPage"
       >
         A história >
       </UButton>
@@ -95,6 +95,10 @@ const homeImagesCarousel = [
 
 const navigateToBoardsPage = async () => {
   await navigateTo('/boards')
+}
+
+const navigateToShaperPage = async () => {
+  await navigateTo('/shaper')
 }
 
 const carouselRef = ref()
