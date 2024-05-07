@@ -42,7 +42,7 @@
               Rabeta:
             </p>
 
-            <USelect v-model="tailType" :options="tailTypes" />
+            <USelect v-model="tailType" :options="tailTypes" @blur="scroll100PxUp"/>
           </div>
         </div>
       </template>
@@ -108,6 +108,14 @@
 
 <script setup lang="ts">
 import boardSpecs from '@/utils/board_specs'
+
+const scroll100PxUp = () => {
+  window.scrollBy({
+  top: -250,
+  left: 0,
+  behavior: "smooth",
+});
+}
 
 const props = defineProps({
   price: {
