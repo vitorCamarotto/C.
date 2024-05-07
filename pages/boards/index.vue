@@ -15,7 +15,11 @@
         v-for="surfboard in surfboardsArray"
         :key="surfboard.name"
         @click="navigateToBoard(surfboard.path)"
-        class="w-2/3 flex flex-col items-center justify-center mx-auto mt-4 mb-16 cursor-pointer"
+        class="
+          w-2/3 flex flex-col items-center justify-center mx-auto mt-4 mb-16 cursor-pointer
+          border rounded-xl border-transparent shadow-xl hover:border-emerald-300 hover:shadow-emerald-800
+          transition-all duration-500 p-2
+        "
       >
         <NuxtImg :src="surfboard.src" :alt="`imagem-prancha-${surfboard.path}`"/>
 
