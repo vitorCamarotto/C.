@@ -42,7 +42,7 @@
           class="text-2xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[91%] xl:right-28"
           @click="navigateToBoardsPage"
         >
-          Ver catálogo >
+          Ver catálogo
         </UButton>
 
         <h1 class="flex items-center text-center text-lg tracking-widest h-[240px] md:text-2xl xl:h-[160px] xl:mt-20">
@@ -62,7 +62,7 @@
           class="text-2xl border border-emerald-300 absolute top-[80%] right-12 tracking-wider xl:top-[86%] xl:right-4"
           @click="navigateToShaperPage"
         >
-          A história >
+          A história
         </UButton>
 
         <h1 class="flex items-center text-lg tracking-widest h-[240px] md:text-2xl xl:h-[160px] xl:mt-20">

@@ -44,13 +44,16 @@
 
   <UDivider class="mt-10"/>
 
-  <div class="flex flex-col items-center justify-center mt-8 mb-4 text-center">
-    <NuxtImg
-      class="mb-8"
-      sizes="40px"
-      src="/gas-mask-white.webp"
-      alt="gas-mask"
-    />
+  <div class="flex flex-col items-center justify-center mt-24 mb-4 text-center">
+    <NuxtLink to="/">
+      <NuxtImg
+        class="mb-8"
+        sizes="40px"
+        src="/gas-mask-white.webp"
+        alt="gas-mask"
+      />
+    </NuxtLink>
+
 
     <div class="flex mt-2">
       <div v-for="icon in socialLinks" :key="icon.iconName">

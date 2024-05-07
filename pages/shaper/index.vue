@@ -28,7 +28,7 @@
         class="text-xl mt-12 tracking-wider"
         @click="navigateToBoardsPage"
       >
-        Ver catálogo >
+        Ver catálogo
       </UButton>
 
     </section>
