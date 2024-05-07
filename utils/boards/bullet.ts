@@ -3,7 +3,7 @@ import type { Surfboard } from '../../types/surfboard';
 const bullet: Surfboard = {
   name: 'Bullet',
   path: 'bullet',
-  price: '2500,00',
+  price: 2500,
   src: '/boards/bullet.webp',
   nameSrc: '/boards/bullet-name.webp',
   availableSizes: ['6\'0"', '6\'3"', '6\'6"'],

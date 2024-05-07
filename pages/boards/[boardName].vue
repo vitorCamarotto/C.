@@ -49,7 +49,7 @@
         Monte sua prancha
       </UBadge>
 
-      <BoardSpecs id="board-specs"/>
+      <BoardSpecs id="board-specs" :price="boardData.price"/>
     </section>
   </div>
 </template>
@@ -58,7 +58,7 @@
 
 const fallbackBoard = {
   name: '',
-  price: '0',
+  price: 0,
   src: '',
   nameSrc: '',
   availableSizes: [],

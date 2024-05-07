@@ -3,7 +3,7 @@ import type { Surfboard } from '../../types/surfboard';
 const stoked: Surfboard = {
   name: 'Stoked',
   path: 'stoked',
-  price: '2500,00',
+  price: 2500,
   src: '/boards/stoked.webp',
   nameSrc: '/boards/stoked-name.webp',
   availableSizes: ['6\'0"', '6\'3"', '6\'6"'],

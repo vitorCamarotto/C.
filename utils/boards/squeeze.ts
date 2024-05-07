@@ -3,7 +3,7 @@ import type { Surfboard } from '../../types/surfboard';
 const squeeze: Surfboard = {
   name: 'Squeeze',
   path: 'squeeze',
-  price: '2500,00',
+  price: 2500,
   src: '/boards/squeeze.webp',
   nameSrc: '/boards/squeeze-name.webp',
   availableSizes: ['6\'0"', '6\'3"', '6\'6"'],

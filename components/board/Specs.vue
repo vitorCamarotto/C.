@@ -86,6 +86,10 @@
 
     </UAccordion>
 
+    <p class="mt-8 tracking-wide text-gray-200">
+      Preço final: {{ calculateFinalPrice() }}
+    </p>
+
     <UButton
       color="primary"
       variant="solid"
@@ -96,7 +100,7 @@
       Finalizar pedido no WhatsApp
     </UButton>
 
-    <p class="text-sm">
+    <p class="text-sm text-gray-200">
       Prazo de entrega: 30 a 45 dias úteis
     </p>
   </div>
@@ -104,6 +108,13 @@
 
 <script setup lang="ts">
 import boardSpecs from '@/utils/board_specs'
+
+const props = defineProps({
+  price: {
+    type: Number,
+    required: true,
+  },
+});
 
 const boardSizes = ["", "Peça conselho do shaper", "5'10 x 19 x 2 1/2 x 24L", "5'11 x 19 x 2 1/2 x 27L", "6'0 x 19 x 2 1/2 x 29L"]
 const boardSize = ref(boardSizes[0])
@@ -128,6 +139,7 @@ const extraInfo = ref('')
 
 const sendToWhatsApp = () => {
   const message = `Salve! Novo pedido de prancha personalizada!:
+
   - Tamanho: ${boardSize.value}
   - Material: ${material.value}
   - Sistema de quilhas: ${finSystem.value}
@@ -141,6 +153,20 @@ const sendToWhatsApp = () => {
   const whatsappUrl = `https://wa.me/5512997184721?text=${encodedMessage}`;
 
   window.open(whatsappUrl, '_blank');
+}
+
+const calculateFinalPrice = () => {
+  let price = props.price || 0;
+
+  if (material.value === 'Carbon (+ R$250,00)') {
+    price += 250;
+  }
+
+  if (colorChoice.value === 'Sim, com pintura (+ R$150,00)') {
+    price += 150;
+  }
+
+  return `R$ ${price}`;
 }
 
 </script>

@@ -3,7 +3,7 @@ import type { Surfboard } from '../../types/surfboard';
 const barrel: Surfboard = {
   name: 'Barrel PRO',
   path: 'barrel',
-  price: '2500,00',
+  price: 2500,
   src: '/boards/barrel-pro.webp',
   nameSrc: '/boards/barrel-pro-name.webp',
   availableSizes: ['6\'0"', '6\'3"', '6\'6"'],
