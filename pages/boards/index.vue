@@ -6,7 +6,11 @@
       </h1>
     </section>
 
-    <section class="flex flex-col items-center lg:content-center lg:grid lg:grid-cols-2 lg:gap-x-24 xl:grid-cols-3">
+    <section
+      class="
+        flex flex-col items-center lg:content-center lg:grid lg:grid-cols-2 lg:gap-x-24
+        xl:grid-cols-3"
+      >
       <div
         v-for="surfboard in surfboardsArray"
         :key="surfboard.name"
