@@ -42,7 +42,7 @@
               Rabeta:
             </p>
 
-            <USelect v-model="tailType" :options="tailTypes" @blur="scroll100PxUp"/>
+            <USelect v-model="tailType" :options="tailTypes" @blur="scroll250PxUp"/>
           </div>
         </div>
       </template>
@@ -94,7 +94,7 @@
       color="primary"
       variant="solid"
       size="xl"
-      class="mb-8 mt-8"
+      class="mb-2 mt-8"
       @click="sendToWhatsApp"
     >
       Finalizar pedido no WhatsApp
@@ -103,13 +103,54 @@
     <p class="text-sm text-gray-200">
       Prazo de entrega: 30 a 45 dias úteis
     </p>
+
+    <div
+      v-show="userClickedSubmit"
+      class="flex flex-col items-center justify-center mt-12 p-2 rounded border border-rose-300"
+    >
+      <p class="text-gray-200" >
+        O envio automático não funcionou?
+      </p>
+
+      <p class="text-gray-200 mt-2">
+        Entre em contato pelo WhatsApp:
+      </p>
+
+      <p
+        @click="copyWhatsAppNumberToClipboard"
+        class="text-center text-blue-400 underline cursor-pointer"
+      >
+        {{ formatPhoneNumber(whatsAppNumber) }}
+      </p>
+
+      <p class="mt-2">
+        e
+      </p>
+
+      <div class="mt-4 flex flex-col items-center cursor-pointer" @click="copyBoardSpecsToClipboard">
+        <p class="text-blue-400 underline">
+          Copie as informações da prancha:
+        </p>
+
+        <UIcon
+          name="material-symbols:content-copy-rounded"
+          class="mt-2"
+          size="40"
+          dynamic
+        />
+
+      </div>
+    </div>
+
+    <UNotifications />
   </div>
 </template>
 
 <script setup lang="ts">
 import boardSpecs from '@/utils/board_specs'
+const toast = useToast()
 
-const scroll100PxUp = () => {
+const scroll250PxUp = () => {
   window.scrollBy({
   top: -250,
   left: 0,
@@ -145,8 +186,25 @@ const colorChoice = ref(colorChoices[0])
 const userName = ref('')
 const extraInfo = ref('')
 
-const sendToWhatsApp = () => {
-  const message = `Salve! Novo pedido de prancha personalizada!:
+const userClickedSubmit = ref(false)
+
+const whatsAppNumber = ref('5512997184721')
+
+function formatPhoneNumber(phoneNumber: string) {
+  if (phoneNumber.length !== 13) {
+    return 'Invalid phone number length';
+  }
+
+  const countryCode = phoneNumber.substring(0, 2);
+  const areaCode = phoneNumber.substring(2, 4);
+  const firstPart = phoneNumber.substring(4, 9);
+  const secondPart = phoneNumber.substring(9, 13);
+
+  return `+${countryCode} (${areaCode}) ${firstPart}-${secondPart}`;
+}
+
+const whatsAppMessage = ref(
+  `Salve! Novo pedido de prancha personalizada!:
 
   - Tamanho: ${boardSize.value}
   - Material: ${material.value}
@@ -155,12 +213,16 @@ const sendToWhatsApp = () => {
   - Rabeta: ${tailType.value}
   - Pintura: ${colorChoice.value}
   - Nome no cliente: ${userName.value}
-  - Informações adicionais: ${extraInfo.value}`;
+  - Informações adicionais: ${extraInfo.value}`
+)
 
-  const encodedMessage = encodeURIComponent(message);
-  const whatsappUrl = `https://wa.me/5512997184721?text=${encodedMessage}`;
+const sendToWhatsApp = () => {
+  const encodedMessage = encodeURIComponent(whatsAppMessage.value);
+  const whatsappUrl = `https://wa.me/${whatsAppNumber.value}?text=${encodedMessage}`;
 
   window.open(whatsappUrl, '_blank');
+
+  userClickedSubmit.value = true;
 }
 
 const calculateFinalPrice = () => {
@@ -175,6 +237,18 @@ const calculateFinalPrice = () => {
   }
 
   return `R$ ${price}`;
+}
+
+const copyWhatsAppNumberToClipboard = () => {
+  navigator.clipboard.writeText(whatsAppNumber.value);
+
+  toast.add({ title: 'Número copiado!' });
+}
+
+const copyBoardSpecsToClipboard = () => {
+  navigator.clipboard.writeText(whatsAppMessage.value);
+
+  toast.add({ title: 'Informações da prancha copiadas!' });
 }
 
 </script>
