@@ -38,6 +38,10 @@
 <script setup lang="ts">
 import { surfboardsArray } from '@/utils/surfboards'
 
+definePageMeta({
+  colorMode: 'dark',
+})
+
 const navigateToBoard = async (path: string) => {
   await navigateTo(`/boards/${path}`)
 }

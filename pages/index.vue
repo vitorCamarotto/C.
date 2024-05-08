@@ -80,6 +80,10 @@
 </template>
 
 <script setup lang="ts">
+definePageMeta({
+  colorMode: 'dark',
+})
+
 const homeImages = [
   { src: 'home/cutback.webp' },
   { src: 'home/pranchas-stock-cedotte.webp' },

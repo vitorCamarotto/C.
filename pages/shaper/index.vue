@@ -38,6 +38,10 @@
 <script setup lang="ts">
 import { firstParagraph, secondParagraph, thirdParagraph } from '@/utils/shaper/paragraphs'
 
+definePageMeta({
+  colorMode: 'dark',
+})
+
 const navigateToBoardsPage = async () => {
   await navigateTo('/boards')
 }
