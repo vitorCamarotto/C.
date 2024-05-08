@@ -11,6 +11,10 @@ const specs: BoardSpecs[] = [
     slot: 'board-construction',
   },
   {
+    label: 'Quilhas',
+    slot: 'board-fins',
+  },
+  {
     label: 'Pintura',
     slot: 'board-paint',
   },

@@ -23,7 +23,19 @@
 
           <div class="my-4">
             <p class="mb-2">
-              Sistema de quilhas:
+              Rabeta:
+            </p>
+
+            <USelect v-model="tailType" :options="tailTypes"/>
+          </div>
+        </div>
+      </template>
+
+      <template #board-fins>
+        <div class="flex flex-col justify-center items-center text-center h-auto font-bold text-white">
+          <div class="my-4">
+            <p class="mb-2">
+              Sistema:
             </p>
 
             <USelect v-model="finSystem" :options="finSystems" />
@@ -31,18 +43,10 @@
 
           <div class="my-4">
             <p class="mb-2">
-              Configuração de quilhas:
+              Configuração:
             </p>
 
             <USelect v-model="finConfiguration" :options="finConfigurations" />
-          </div>
-
-          <div class="my-4">
-            <p class="mb-2">
-              Rabeta:
-            </p>
-
-            <USelect v-model="tailType" :options="tailTypes" @blur="scroll250PxUp"/>
           </div>
         </div>
       </template>
@@ -150,14 +154,6 @@
 import boardSpecs from '@/utils/board_specs'
 const toast = useToast()
 
-const scroll250PxUp = () => {
-  window.scrollBy({
-  top: -250,
-  left: 0,
-  behavior: "smooth",
-});
-}
-
 const props = defineProps({
   price: {
     type: Number,
@@ -203,8 +199,8 @@ function formatPhoneNumber(phoneNumber: string) {
   return `+${countryCode} (${areaCode}) ${firstPart}-${secondPart}`;
 }
 
-const whatsAppMessage = ref(
-  `Salve! Novo pedido de prancha personalizada!:
+const whatsAppMessage = computed(() => {
+  return `Salve! Novo pedido de prancha personalizada!:
 
   - Tamanho: ${boardSize.value}
   - Material: ${material.value}
@@ -214,7 +210,7 @@ const whatsAppMessage = ref(
   - Pintura: ${colorChoice.value}
   - Nome no cliente: ${userName.value}
   - Informações adicionais: ${extraInfo.value}`
-)
+})
 
 const sendToWhatsApp = () => {
   const encodedMessage = encodeURIComponent(whatsAppMessage.value);
