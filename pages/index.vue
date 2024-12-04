@@ -28,7 +28,7 @@
         v-slot="{ item }"
         :items="homeImagesCarousel"
         :ui="{ item: 'basis-full' }"
-        class="rounded overflow-hidden lg:w-6/12"
+        class="rounded overflow-hidden"
         indicators
       >
         <NuxtImg :src="item" class="w-full" draggable="false" alt="imagem-surf"/>
@@ -92,11 +92,10 @@ const homeImages = [
 ]
 
 const homeImagesCarousel = [
-  'home/aereo-2.webp',
-  'home/tubo.webp',
-  'home/aereo.webp',
-  'home/cutback.webp',
-  'home/rasgada.webp',
+  'home/surfHD1.webp',
+  'home/surfHD2.webp',
+  'home/surfHD3.webp',
+  'home/surfHD4.webp',
 ]
 
 const navigateToBoardsPage = async () => {
